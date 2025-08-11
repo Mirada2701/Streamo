@@ -1,0 +1,6 @@
+@Streamo.WebAPI_HostAddress = http://localhost:5283
+
+GET {{Streamo.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
