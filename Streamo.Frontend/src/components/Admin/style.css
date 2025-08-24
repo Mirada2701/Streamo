@@ -1,0 +1,50 @@
+.custom-scrollbar {
+  overflow-y: scroll;
+  scrollbar-width:auto; 
+  scrollbar-color: hsl(0,0%,67%) transparent; /* Firefox */
+   padding: 30px;
+  height: 600px;
+
+}
+
+
+
+
+.user-item {
+  text-align: left;
+}
+
+.user-details {
+  color: white;
+  display: table-cell;
+  width: 400px;
+}
+.user-actions {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.action-button {
+  margin: 10px;
+}
+
+.report-item {
+  text-align: left;
+}
+
+.report-details {
+  color: white;
+  display: table-cell;
+}
+.report-actions {
+}
+
+.reports {
+  padding: 30px;
+}
+
+.reports-header {
+  color: white;
+  text-align: center;
+}

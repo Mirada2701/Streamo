@@ -1,10 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter, BrowserRouter as Router } from 'react-router-dom';
+import App from './App';
+import './index.css';
+import './satoshi.css';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { loadTokenFromStorage } from './services/tokenService';
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+if (localStorage.token) {
+  loadTokenFromStorage();
+}
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
+);
