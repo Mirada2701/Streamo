@@ -58,7 +58,7 @@ builder.Services.AddSwaggerGen(o =>
 
     o.SwaggerDoc("v1", new OpenApiInfo()
     {
-        Title = "MEGUTube API - v1",
+        Title = "Streamo API - v1",
         Version = "v1"
     });
 });
@@ -78,7 +78,7 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "MEGUTube API - v1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Streamo API - v1");
 
     // setup Google OAuth2
     var googleClientId = configuration.GetValue<string>("GoogleOAuth:ClientId");
