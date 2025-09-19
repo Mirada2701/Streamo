@@ -8,29 +8,29 @@ WORKDIR /app
 
 WORKDIR /src
 
-COPY ["MEGUTube.Application/MEGUTube.Application.csproj", "MEGUTube.Application/"]
-COPY ["MEGUTube.Domain/MEGUTube.Domain.csproj", "MEGUTube.Domain/"]
-COPY ["MEGUTube.Persistence/MEGUTube.Persistence.csproj", "MEGUTube.Persistence/"]
-COPY ["MEGUTube.WebApi/MEGUTube.WebApi.csproj", "MEGUTube.WebApi/"]
-RUN dotnet restore "MEGUTube.WebApi/MEGUTube.WebApi.csproj"
+COPY ["Streamo.Application/Streamo.Application.csproj", "Streamo.Application/"]
+COPY ["Streamo.Domain/Streamo.Domain.csproj", "Streamo.Domain/"]
+COPY ["Streamo.Persistence/Streamo.Persistence.csproj", "Streamo.Persistence/"]
+COPY ["Streamo.WebApi/Streamo.WebApi.csproj", "Streamo.WebApi/"]
+RUN dotnet restore "Streamo.WebApi/Streamo.WebApi.csproj"
 
 # copy everything else and build app
 COPY . .
-WORKDIR /src/MEGUTube.WebApi
-RUN dotnet build "MEGUTube.WebApi.csproj" -c Release -o /app/build
+WORKDIR /src/Streamo.WebApi
+RUN dotnet build "Streamo.WebApi.csproj" -c Release -o /app/build
 
 
 FROM build AS publish
-RUN dotnet publish "MEGUTube.WebApi.csproj" -c Release -o /app/publish
+RUN dotnet publish "Streamo.WebApi.csproj" -c Release -o /app/publish
 
 
 # final stage/image
 #FROM mcr.microsoft.com/dotnet/aspnet:7.0
 #WORKDIR /app
 #COPY --from=build /app/publish .
-#ENTRYPOINT ["dotnet", "MEGUTube.WebApi.dll"]
+#ENTRYPOINT ["dotnet", "Streamo.WebApi.dll"]
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "MEGUTube.WebApi.dll"]
+ENTRYPOINT ["dotnet", "Streamo.WebApi.dll"]

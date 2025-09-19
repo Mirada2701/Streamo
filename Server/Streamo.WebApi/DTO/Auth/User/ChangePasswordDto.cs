@@ -1,0 +1,20 @@
+﻿using AutoMapper;
+using Streamo.Application.Common.Mappings;
+using Streamo.Application.CQRS.Identity.Users.Commands.ChangePassword;
+
+namespace Streamo.WebApi.DTO.Auth.ChangePassword {
+    public class ChangePasswordDto : IMapWith<ChangePasswordCommand> { 
+      
+        public string Password { get; set; } = null!;
+
+        public string NewPassword { get; set; } = null!;
+
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<ChangePasswordDto, ChangePasswordCommand>()
+                .ForMember(command => command.Password, opt => opt.MapFrom(dto => dto.Password))
+                
+                .ForMember(command => command.NewPassword, opt => opt.MapFrom(dto => dto.NewPassword));
+        }
+    }
+}
