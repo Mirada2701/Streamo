@@ -15,7 +15,7 @@ namespace Streamo.Persistence.Services {
             var email = new MimeMessage();
             email.From.Add(MailboxAddress.Parse(_configuration.GetValue<string>("SMTP:Username")));
             email.To.Add(MailboxAddress.Parse(recipient));
-            email.Subject = "MEGUTube Support";
+            email.Subject = "Streamo Support";
             email.Body = new TextPart(TextFormat.Html) { Text = message };
 
             using var smtp = new MailKit.Net.Smtp.SmtpClient();
