@@ -11,41 +11,51 @@ module.exports = {
     colors: {
       current: 'currentColor',
       transparent: 'transparent',
-      white: '#D3D3D3',
-      black: '#0ac4c7',
+
+      white: '#FFFFFF',
+      black: '#0F172A',
       absoluteblack: '#000000',
-      'black-2': '#0ac4c7',
-      body: '#39c3ed',
-      bodydark: '#a4d1e7',
-      bodydark1: '#DEE4EE',
-      bodydark2: '#8A99AF',
-      primary: '#e861bd',
-      secondary: '#171717',
-      stroke: '#F7F9FC',
-      gray: '#666873',
-      graydark: '#39c3ed',
-      'gray-2': '#F7F9FC',
-      'gray-3': '#FAFAFA',
-      whiten: '#F1F5F9',
-      whiter: '#F5F7FD',
-      boxdark: '#0ac4c7',
-      'boxdark-2': '#171717',
-      strokedark: '#0ac4c7',
-      'form-strokedark': '#0ac4c7',
-      'form-input': '#0ac4c7',
-      'meta-1': '#DC3545',
-      'meta-2': '#EFF2F7',
-      'meta-3': '#10B981',
-      'meta-4': '#313D4A',
-      'meta-5': '#259AE6',
-      'meta-6': '#FFBA00',
-      'meta-7': '#FF6766',
-      'meta-8': '#F0950C',
+
+      body: '#1E293B',
+      bodydark: '#64748B',
+      bodydark1: '#94A3B8',
+      bodydark2: '#ffffff',
+
+      primary: '#6366F1',   // сучасний фіолетово-синій
+      secondary: '#fa8ada', // бірюзово-зелений акцент
+
+      stroke: '#E2E8F0',
+      gray: '#6B7280',
+      graydark: '#475569',
+      'gray-2': '#F1F5F9',
+      'gray-3': '#F8FAFC',
+      whiten: '#F9FAFB',
+      whiter: '#FFFFFF',
+
+
+      boxdark: '#1E293B',
+      'boxdark-2': '#0F172A',
+      strokedark: '#334155',
+      'form-strokedark': '#CBD5E1',
+      'form-input': '#E2E8F0',
+
+      // Метадані / статуси
+      'meta-1': '#EF4444', // error
+      'meta-2': '#F1F5F9',
+      'meta-3': '#22C55E', // success
+      'meta-4': '#334155',
+      'meta-5': '#3B82F6', // info
+      'meta-6': '#F59E0B', // warning
+      'meta-7': '#FB7185', // danger-light
+      'meta-8': '#F97316', // orange
       'meta-9': '#E5E7EB',
-      success: '#219653',
-      danger: '#D34053',
-      warning: '#FFA70B',
+
+      // Системні кольори
+      success: '#16A34A',
+      danger: '#DC2626',
+      warning: '#FBBF24',
     },
+
     screens: {
       '2xsm': '375px',
       xsm: '425px',
@@ -54,14 +64,14 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        'title-xxl': ['44px', '55px'],
-        'title-xl': ['36px', '45px'],
-        'title-xl2': ['33px', '45px'],
-        'title-lg': ['28px', '35px'],
-        'title-md': ['24px', '30px'],
-        'title-md2': ['26px', '30px'],
-        'title-sm': ['20px', '26px'],
-        'title-xsm': ['18px', '24px'],
+        'title-xxl': ['56px', '68px'], // Великі хедери, hero секції
+        'title-xl':  ['44px', '58px'], // Потужний сабхедер
+        'title-xl2': ['38px', '52px'], // Секційні заголовки
+        'title-lg':  ['32px', '44px'], // Основні заголовки
+        'title-md2': ['28px', '40px'], // Візуально акцентовані
+        'title-md':  ['24px', '36px'], // Базові заголовки
+        'title-sm':  ['20px', '30px'], // Підзаголовки
+        'title-xsm': ['16px', '24px'], // Найменші тайтли
       },
       spacing: {
         4.5: '1.125rem',
@@ -216,38 +226,42 @@ module.exports = {
       borderWidth: {
         6: '6px',
       },
+
       boxShadow: {
-        default: '0px 8px 13px -3px rgba(0, 0, 0, 0.07)',
-        card: '0px 1px 3px rgba(0, 0, 0, 0.12)',
-        'card-2': '0px 1px 2px rgba(0, 0, 0, 0.05)',
+        default: '0px 4px 20px rgba(0,0,0,0.08)', // м'якіша тінь
+        card: '0px 2px 8px rgba(0,0,0,0.06)',
+        'card-2': '0px 1px 3px rgba(0,0,0,0.08)',
         switcher:
-          '0px 2px 4px rgba(0, 0, 0, 0.2), inset 0px 2px 2px #FFFFFF, inset 0px -1px 1px rgba(0, 0, 0, 0.1)',
-        'switch-1': '0px 0px 5px rgba(0, 0, 0, 0.15)',
-        1: '0px 1px 3px rgba(0, 0, 0, 0.08)',
-        2: '0px 1px 4px rgba(0, 0, 0, 0.12)',
-        3: '0px 1px 5px rgba(0, 0, 0, 0.14)',
-        4: '0px 4px 10px rgba(0, 0, 0, 0.12)',
-        5: '0px 1px 1px rgba(0, 0, 0, 0.15)',
-        6: '0px 3px 15px rgba(0, 0, 0, 0.1)',
+          '0px 2px 4px rgba(0,0,0,0.12), inset 0px 2px 2px #FFFFFF, inset 0px -1px 1px rgba(0,0,0,0.08)',
+        'switch-1': '0px 0px 5px rgba(0,0,0,0.12)',
+        1: '0px 1px 2px rgba(0,0,0,0.06)',
+        2: '0px 1px 4px rgba(0,0,0,0.08)',
+        3: '0px 2px 6px rgba(0,0,0,0.10)',
+        4: '0px 4px 12px rgba(0,0,0,0.12)',
+        6: '0px 6px 20px rgba(0,0,0,0.14)',
         7: '-5px 0 0 #313D4A, 5px 0 0 #313D4A',
-        8: '1px 0 0 #313D4A, -1px 0 0 #313D4A, 0 1px 0 #313D4A, 0 -1px 0 #313D4A, 0 3px 13px rgb(0 0 0 / 8%)',
+        8: '0 0 0 1px #E5E7EB, 0 8px 24px rgba(0,0,0,0.08)',
       },
       dropShadow: {
-        1: '0px 1px 0px #E2E8F0',
-        2: '0px 1px 4px rgba(0, 0, 0, 0.12)',
+        1: '0px 1px 1px rgba(0,0,0,0.08)',
+        2: '0px 2px 4px rgba(0,0,0,0.10)',
       },
       keyframes: {
         rotating: {
-          '0%, 100%': { transform: 'rotate(360deg)' },
-          '50%': { transform: 'rotate(0deg)' },
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        fadeInUp: {
+          '0%': { opacity: 0, transform: 'translateY(20px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+
         },
       },
       animation: {
         'ping-once': 'ping 5s cubic-bezier(0, 0, 0.2, 1)',
-        rotating: 'rotating 30s linear infinite',
+        rotating: 'rotating 20s linear infinite',
         'spin-1.5': 'spin 1.5s linear infinite',
-        'spin-2': 'spin 2s linear infinite',
-        'spin-3': 'spin 3s linear infinite',
+        'fade-in-up': 'fadeInUp 0.6s ease-out',
       },
     },
   },
