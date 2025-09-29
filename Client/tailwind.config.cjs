@@ -22,7 +22,7 @@ module.exports = {
       bodydark2: '#ffffff',
 
       primary: '#6366F1',   // сучасний фіолетово-синій
-      secondary: '#fa8ada', // бірюзово-зелений акцент
+      secondary: 'rgba(104,119,131,0.29)', // бірюзово-зелений акцент
 
       stroke: '#E2E8F0',
       gray: '#6B7280',
